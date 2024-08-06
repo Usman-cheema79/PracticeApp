@@ -18,7 +18,7 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3002/api/login", {
+      const response = await axios.post("https://practicemartbackend.vercel.app/api/login", {
         email,
         password,
       });
