@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors({ origin: '*' }));
 
 // Define routes
-app.get('/api/hello', (req, res) => {
+app.get('/', (req, res) => {
     res.json({ message: 'Hello from serverless function!' });
   });
   
