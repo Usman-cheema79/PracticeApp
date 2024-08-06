@@ -21,7 +21,7 @@ export const auth = () => {
     // // Dispatch action to set authenticated user in Redux state
     // const dispatch = useDispatch();
     // dispatch(setUser(user));
-
+console.log(user);
     return user;
   } catch (error) {
     console.error("Authentication error:", error.message);
