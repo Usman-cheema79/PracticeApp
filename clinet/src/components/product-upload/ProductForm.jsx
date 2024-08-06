@@ -8,7 +8,8 @@ import InputField from "../InputField";
 
 const ProductForm = () => {
   const user = auth();
-  const userId = user?._id;
+  console.log("user\; " , user);
+  const userId = user?.id;
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -61,7 +62,7 @@ const ProductForm = () => {
         userId: userId,
       };
 
-      console.log("Sending product data to backend...");
+      console.log("Sending product data to backend..." , productData);
       const response = await axios.post(
         "http://localhost:3002/api/products",
         productData

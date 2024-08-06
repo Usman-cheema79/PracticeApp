@@ -16,7 +16,7 @@ const addProduct = async (req, res) => {
     });
 
     await newProduct.save();
-    res.status(201).json({ success: true,   ct });
+    res.status(201).json({ success: true });
   } catch (error) {
     console.log("error",error);
 
