@@ -8,7 +8,7 @@ import InputField from "../InputField";
 
 const ProductForm = () => {
   const user = auth();
-  const userId = user._id;
+  const userId = user?._id;
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({
     name: "",

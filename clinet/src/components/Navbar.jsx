@@ -1,18 +1,15 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import { clearUser } from '../redux/actions/userActions'; // Adjust path as needed
 import Cookies from 'js-cookie';
 import { auth } from "../hook/auth";
 import { useNavigate } from 'react-router-dom';
 
 const AppNavbar = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const user = auth();
 
   const handleLogout = () => {
-    dispatch(clearUser());
+    
     Cookies.remove('token');
     navigate('/login');
   };

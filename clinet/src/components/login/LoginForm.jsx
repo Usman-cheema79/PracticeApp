@@ -3,8 +3,6 @@ import { Form, Button, Alert, Spinner } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import InputField from "../InputField";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../redux/actions/userActions"; // Adjust the path as necessary
 import Cookies from "js-cookie";
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +10,7 @@ const LoginForm = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const dispatch = useDispatch(); // Hook to dispatch actions
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -27,7 +25,7 @@ const LoginForm = () => {
       if (response.data.success) {
         // Store user data in Redux
         Cookies.set("token", response.data.token, { expires: 7 }); // Token expires in 7 days
-        dispatch(setUser({ email }));
+        // dispatch(setUser({ email }));s
         navigate("/");
       } else {
         setError("Invalid credentials");
