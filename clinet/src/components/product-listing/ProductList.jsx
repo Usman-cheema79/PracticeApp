@@ -10,7 +10,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3002/api/products');
+        const response = await axios.get('https://backendmarti.vercel.app/products');
         // Assuming response.data.products is the array of products
         if (Array.isArray(response.data.products)) {
           setProducts(response.data.products);

@@ -18,7 +18,7 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://backend-plum-five.vercel.app/api/login", {
+      const response = await axios.post("https://backendmarti.vercel.app/login", {
         email,
         password,
       });

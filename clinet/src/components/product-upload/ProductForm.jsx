@@ -64,7 +64,7 @@ const ProductForm = () => {
 
       console.log("Sending product data to backend..." , productData);
       const response = await axios.post(
-        "http://localhost:3002/api/products",
+        "https://backendmarti.vercel.app/products",
         productData
       );
       console.log("Response:", response.data);
