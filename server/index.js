@@ -19,8 +19,8 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello from serverless function!' });
   });
   
-// app.use('/', userRoutes);
-// app.use('/', productRoutes);
+app.use('/', userRoutes);
+app.use('/', productRoutes);
 
 const PORT = 3002;
 
