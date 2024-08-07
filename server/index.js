@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
   });
   
 app.use('/', userRoutes);
-app.use('/', productRoutes);
+// app.use('/', productRoutes);
 
 const PORT = 3002;
 
