@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
   });
   
   app.post('/login', loginUser);
-  // app.use('/', productRoutes);
+  app.use('/', productRoutes);
   app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ success: false, message: 'Internal Server Error' });
