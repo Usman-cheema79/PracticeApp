@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const cors = require('cors');
-const userRoutes = require('./routes/userRoute');
+const { loginUser } = require('./controllers/userController');
 const productRoutes = require('./routes/productRoute');
 
 dotenv.config();
@@ -19,9 +19,12 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello from serverless function!' });
   });
   
-app.use('/', userRoutes);
-// app.use('/', productRoutes);
-
+  app.post('/login', loginUser);
+  // app.use('/', productRoutes);
+  app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ success: false, message: 'Internal Server Error' });
+  });
 const PORT = 3002;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
