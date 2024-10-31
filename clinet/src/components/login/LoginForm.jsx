@@ -18,7 +18,7 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:3002/login", {
+      const response = await axios.post("https://sever-omega.vercel.app/login", {
         email,
         password,
       });
