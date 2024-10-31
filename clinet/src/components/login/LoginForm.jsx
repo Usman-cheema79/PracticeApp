@@ -18,7 +18,7 @@ const LoginForm = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://http://localhost:3002//login", {
+      const response = await axios.post("https://localhost:3002/login", {
         email,
         password,
       });
